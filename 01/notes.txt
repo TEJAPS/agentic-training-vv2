@@ -1,4 +1,34 @@
-
-
+Discussed in session:
+=====================
 lab 1: https://github.com/skills/introduction-to-github
 lab 2: https://github.com/skills/review-pull-requests
+API's
+Illustration: GitHub Workflow & DevTools
+Illustration: GitHub Student Repositories 
+Framework and machine learning - training/testing, prediction, algo, models, NN
+Storing ML models
+Full stack app flow
+
+
+Assignments:
+=====================
+1. Learn the math behind ML algorithms. - 
+https://www.youtube.com/watch?v=cayzifH9sqc&list=PLLUFZCmqicc
+vkvCCax14T3OneUyEo2X0&index=2
+2. Create a repo - Build a full stack app with frontend, backend, and database.
+3. Create a repo - Build a small ML model
+4. Optional - use this model to predict based on the inputs coming from 
+the frontend of the full stack app you built.
+5. Create a repo named - abcd-agentic-training-vnr-<yourname> 
+and reference/links of other projects and use case in this repo.
+
+these are humangous assignments, so you can prioritize in the given order, 
+and need not complete all assignments this week itself.
+
+
+Install below tools before next session:
+==========================================
+1. cursor 
+2. jupyter notebook
+3. telegram app
+4. docker desktop - https://docs.docker.com/desktop/setup/install/windows-install/
