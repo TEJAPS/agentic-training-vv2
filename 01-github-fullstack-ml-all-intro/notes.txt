@@ -33,3 +33,5 @@ Install below tools before next session:
 3. telegram app
 4. docker desktop - https://docs.docker.com/desktop/setup/install/windows-install/
 5. claude desktop - https://claude.com/download
+6. python 3.x version
+7. node js and npm latest version
