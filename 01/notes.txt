@@ -32,3 +32,4 @@ Install below tools before next session:
 2. jupyter notebook
 3. telegram app
 4. docker desktop - https://docs.docker.com/desktop/setup/install/windows-install/
+5. claude desktop - https://claude.com/download
