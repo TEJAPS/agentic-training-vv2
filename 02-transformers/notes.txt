@@ -1,0 +1,221 @@
+Index:
+Evolution of AI
+    PPT
+    Deeplearning
+Transformers
+    PDF
+    Tokenization
+    cosine
+Attention
+    PDF
+
+side topics:
+    dockers
+    n8n
+=====================================================
+
+GPT - generative pretrained transformer
+
+Generative - bots that generate new text
+
+pre trained - shows how model went through process of learning for massive data,  
+and the prefix insinuates that there's more room to fine tune it to on specific tasks with additional training.
+
+transformer - specific kind of neural network, a ML model, core invention underlying AI.
+
+With transformer we can build various models -
+    voice to text 
+    text to voice
+    text to image - DALLE , midjourney
+
+2017 - Attention is all you need - language translation by google
+
+Transformer(GPT2 / GPT3) - whole purpose is to predict the next word based on probability distribution of the context.
+    repeat the same step, and generate full para, books, etc.
+    this probability and prediction is in short what transformer does.
+
+    then it goes through Multi layer perceptron or feed forward layer - goes through similar math operation instead of talking to each other.
+        like: ask questions and updates each col individually
+        ex: normalization
+    
+    many repetitions of attention and MLP
+    and last layer goes through probability distribution to predict next token.
+
+User prompt
+System prompt
+GPT2 GPT3 and so on....
+
+GPT3 - 175 billion parameters with 27,938 matrics
+    has vocab of 50k words/tokens
+    and has embedding matrix - where every word will have 1 column = We
+        it gets modified based on data
+    embedding space = 12,288 coordinates
+    Embedding matrix = 12288 * 50257 = 617,558,016 weights
+
+
+
+
+
+Tokenization - input is broken into small tokens. 
+    token is mapped with vector
+    vector goes through some operations called attention block to update its values
+    ex: model meaning in diff context
+
+
+=====================================================
+
+Neural Networks (the foundation)
+    A neural network is a bunch of layers that:
+    Take numbers in
+    Multiply + add weights
+    Pass through activation functions
+    Learn by adjusting weights using backpropagation
+
+    Examples: 
+        Feed-forward NN
+        CNNs (images, videos, spatial data) - Convolutional Neural Network - looks at local pattern - learns hierarchially
+        RNNs(seqential data, time series, text early NLP) - Recurrent Neural Network - Remember previous inputs
+            problem: forget long term context, vanishing gradients
+        LSTMs (sequences) - Long Short-Term Memory - It fixes RNN problems using gates - speech recognition, time series forecasting, language translation(pre transformer era)
+
+    | Model       | Best for       | Core idea               | Limitation           |
+    | ----------- | -------------- | ----------------------- | -------------------- |
+    | CNN         | Images         | Local pattern detection | Not for sequences    |
+    | RNN         | Sequences      | Memory over time        | Forgets long context |
+    | LSTM        | Long sequences | Gated memory            | Slow, sequential     |
+    | Transformer | Text, LLMs     | Attention               | Compute heavy        |
+
+Deep Learning (neural networks, but deep)
+    Deep Learning = neural networks with many layers
+    Why depth matters:
+        Early layers learn simple patterns
+        Deeper layers learn abstract concepts
+    Used in:
+        Vision
+        Speech
+        NLP (language)
+    👉 Still neural networks — just bigger + deeper.
+
+NLP before Transformers (why they were needed)
+    Before transformers, NLP used:
+    RNN / LSTM
+    Problems:
+        Process words one by one
+        Hard to parallelize
+        Forget long-range context
+        Slow + unstable for long text
+
+    Example pain:
+        “The book that I bought last year from the store near my house was expensive”
+        RNN struggles to connect “book” ↔ “was” across long distance.
+
+Transformers (the breakthrough):
+    Transformer = a deep neural network architecture designed for sequences (text)
+    Look at all words at the same time and decide what matters
+
+    The transformer is the block labeled “[*×N] Layers: Attention + MLP”.
+    GPT is a decoder-only Transformer, meaning the model is literally a stack of Transformer blocks.
+
+    Embedding
+    ↓
+    ┌───────────────────────────────┐
+    │ Transformer Block 1           │
+    │  - Self-Attention             │
+    │  - MLP (Feed Forward)         │
+    │  - Residuals + LayerNorm      │
+    ├───────────────────────────────┤
+    │ Transformer Block 2           │
+    │  - Self-Attention             │
+    │  - MLP                        │
+    │  - Residuals + LayerNorm      │
+    ├───────────────────────────────┤
+    │ ...                           │
+    ├───────────────────────────────┤
+    │ Transformer Block N           │
+    └───────────────────────────────┘
+    ↓
+    Unembedding
+
+    Multi-Head Self-Attention
+    → Lets each token attend to other tokens from multiple representation subspaces to capture different relationships in parallel.
+
+    Feed-Forward Network (MLP)
+    → Applies a position-wise non-linear transformation to each token independently to increase model expressiveness.
+
+    Residual Connections
+    → Add the layer’s input back to its output to preserve information and enable stable training of very deep networks.
+
+    Layer Normalization
+    → Normalizes activations across features to stabilize gradients and speed up training.
+
+A Transformer is a neural network architecture built from repeated blocks of
+self-attention + feed-forward layers, connected with residuals and normalization.
+
+The number of transformer layers is not chosen by “accuracy intuition” — it is chosen by compute budget,
+    data size, scaling laws, and training stability.
+    You ask “how big can I afford to train reliably?”
+
+🧠 Self-Attention (the magic)
+    Every word looks at every other word
+
+    Learns relationships like:
+        subject ↔ verb
+        pronoun ↔ noun
+        cause ↔ effect
+
+    Example:
+        “I deposited money in the bank near the river”
+    The word bank attends to river, not money institution.
+
+Inside a transformer:
+    Linear layers (weights)
+    Matrix multiplications
+    Activations
+    Backpropagation
+    Loss function
+    👉 No new math, just a better structure.
+
+LLMs (Transformers on steroids):
+    LLM = a very large transformer trained on huge text corpora
+    What makes it “large”:
+        Billions / trillions of parameters
+    
+    Trained on:
+        Books
+        Code
+        Articles
+        Conversations
+
+    Training objective:
+        Predict the next token
+
+    Example:
+    “Transformers are very powerful because they ___”
+    Model predicts: “can model long-range dependencies”
+
+Relationship map (this is the key):
+    Neural Networks
+    ↓
+    Deep Learning
+    ↓
+    Transformers (architecture)
+    ↓
+    LLMs (huge transformer models)
+
+| Term          | What it is                          |
+| ------------- | ----------------------------------- |
+| Neural Net    | Mathematical model with weights     |
+| Deep Learning | Many-layer neural nets              |
+| Transformer   | A specific deep neural net design   |
+| LLM           | Massive transformer trained on text |
+
+Transformers are not “AI brains” — they’re just very good at learning relationships between tokens using attention.
+
+What makes transformers perfect for LLMs?
+    ✅ Parallel training (fast on GPUs)
+    ✅ Handles long context
+    ✅ Captures grammar + semantics
+    ✅ Scales insanely well
+
+
+=====================================================
