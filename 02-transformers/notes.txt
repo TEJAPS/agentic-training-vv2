@@ -12,6 +12,7 @@ Attention
 side topics:
     dockers
     n8n
+    package manager
 =====================================================
 
 GPT - generative pretrained transformer
@@ -219,3 +220,10 @@ What makes transformers perfect for LLMs?
 
 
 =====================================================
+
+assignments:
+1. continue completing previous weeks
+2. implement tokanization
+3. implement cosine search and othere search algorithms
+4. push all above in github
+5. download the project folder 03 will share, and apply uv synC on it.
